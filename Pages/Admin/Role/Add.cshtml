@@ -1,0 +1,36 @@
+﻿@page
+@using Eshop.RazorPage.Infrastructure
+@using Eshop.RazorPage.TagHelpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model AppRazorPage.Pages.Admin.Role.AddModel
+@{
+    ViewData["Title"] = "افزودن نقش ";
+    ViewData["selected"] = "roles";
+}
+<main class="page-content">
+    <div class="container">
+
+    <form class="card" method="post">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.EditorFor(f=>f.Title)
+                </div>
+                <div class="col-md-6">
+                    <label>انتخاب دسترسی ها</label>
+                    <select class="select2 form-control" multiple="" name="permission[]">
+                        @foreach (var item in Enum.GetNames(typeof(Permission)))
+                        {
+                            <option value="@item">@item.Replace("_", " ")</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-left">
+            <cancel></cancel>
+            <submit />
+        </div>
+    </form>
+    </div>
+</main>

@@ -1,0 +1,48 @@
+﻿@page
+@model AppRazorPage.Pages.Product.AddModel
+@{
+    Layout = "Shared/_Layout";
+}
+<section class="contact-box-section">
+  
+
+    <form class="card" method="post" enctype="multipart/form-data">
+        <div class="col-8 container">
+            <div class="right-sidebar-box">
+                <div class="row">
+                  
+                    <div class="col-md-6">
+                        <div class="mb-md-4 mb-3 custom-form">
+                            <label for="exampleFormControlInput" class="form-label">نام محصول</label>
+                            <div class="custom-input">
+                                <input type="text" class="form-control" id="exampleFormControlInput" placeholder="نام محصول خود را وارد گنید">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6">
+                        <div class="mb-md-4 mb-3 custom-form">
+                            <label for="exampleFormControlInput1" class="form-label">قیمت محصول</label>
+                            <div class="custom-input">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="قیمت محصول خود را وارد گنید">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+        
+             @Html.EditorFor(f=>f.Price)
+             @Html.EditorFor(f=>f.Title)
+                </div>
+                    <button class="btn btn-animation btn-md fw-bold ms-auto">ساخت محصول</button>
+                </div> 
+        
+        </div>
+   </form>
+</section>
+<br/>
+<br/>
+@section Scripts
+{
+    
+}
